@@ -1,12 +1,10 @@
 #container {
-    background-color: #E97777;
     width: 960px;
     height: 960px;
     border-width: 10px;
     border-style: solid;
     border-color: #E97777;
     border-radius: 10px;
-    padding: 0px;
     display: flex;
     flex-wrap: wrap;
 }
@@ -14,5 +12,10 @@
 .pixel {
     background-color: #FFFAD7;
     padding: 0px;
-   flex-basis: 6.25%;
+    flex-basis: 6.25%;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
     }

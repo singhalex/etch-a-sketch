@@ -2,10 +2,9 @@ let gridSize = 16;
 
 const container = document.querySelector("#container");
 
-function createPixel(text) {
+function createPixel() {
     const pixel = document.createElement("div");
     pixel.className = "pixel";
-    pixel.textContent = text;
     pixel.addEventListener("mouseover", () => {
         pixel.style.backgroundColor = "#FF9F9F";
     })
@@ -13,7 +12,7 @@ function createPixel(text) {
 }
 
 for (let i = 1; i <= (gridSize * gridSize); i++) {
-    createPixel(i);
+    createPixel();
 }
 
 const pixel = document.querySelector(".pixel");
