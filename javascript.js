@@ -68,6 +68,9 @@ basicEtch();
 
 setGridSize.addEventListener("click", () => {
     gridSize = prompt("Enter the grid size:");
+    while (gridSize < 1 || gridSize > 100) {
+        gridSize = prompt("Grid size must be between 1 and 100:");
+    }
     removeGrid();
     createGrid();
     basicEtch();
