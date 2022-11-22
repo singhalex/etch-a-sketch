@@ -31,3 +31,8 @@ body {
     background-color: #FCDDB0;
     border-color: #FFFAD7;
 }
+
+#button-container {
+    display: flex;
+    gap: 1em;
+}

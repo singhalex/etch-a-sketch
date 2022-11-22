@@ -15,9 +15,6 @@ function createPixel() {
     pixel.className = "pixel";
     setFlexBasis(gridSize)
     pixel.style.flexBasis = `${flexBasis}%`;
-    // pixel.addEventListener("mouseover", () => {
-    //     pixel.style.backgroundColor = "#FF9F9F";        
-    // })
     container.appendChild(pixel);
 }
 
@@ -50,29 +47,32 @@ function basicEtch() {
     }
 }
 
-createGrid();
-basicEtch();
-
-reset.addEventListener("click", () => {
+function defaultPixelColor() {
     const pixels = document.querySelectorAll(".pixel");
     for (let i = 0; i < pixels.length; i++) {
-        pixels[i].style.backgroundColor = "#FFFAD7";
+        pixels[i].style.backgroundColor = "#FFFAD7"
     }
-})
+}
 
-setGridSize.addEventListener("click", () => {
-    gridSize = prompt("Enter the grid size:");
-    removeGrid();
-    createGrid();
-})
-
-rainbow.addEventListener("click", () => {
+function rainbowEtch() {
     const pixels = document.querySelectorAll(".pixel");
     for (let i = 0; i < pixels.length; i++) {
         pixels[i].addEventListener("mouseover", () => {
             pixels[i].style.backgroundColor = randomColor();
         })
     }
+}
+
+createGrid();
+basicEtch();
+
+setGridSize.addEventListener("click", () => {
+    gridSize = prompt("Enter the grid size:");
+    removeGrid();
+    createGrid();
+    basicEtch();
 })
 
+rainbow.addEventListener("click", rainbowEtch)
 basic.addEventListener("click", basicEtch);
+reset.addEventListener("click", defaultPixelColor)
